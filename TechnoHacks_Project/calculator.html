@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(4, 4, 30);
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .main {
+            width: 30%;
+            height: 500px;
+            border-radius: 20px;
+            background-color: rgba(55, 101, 164, 0.682);
+            padding: 25px;
+        }
+
+        .main input {
+            width: 90%;
+            height: 60px;
+            margin: 40px 20px;
+
+            font-size: 55px;
+            background-color: rgba(237, 236, 243, 0.852);
+        }
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 20px;
+            width: 90%;
+
+        }
+
+        .btn button {
+
+            width: 70px;
+            height: 35px;
+            gap: 55px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: -1px -10px 12px rgba(255, 255, 255, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1),
+                -5px -5px 5px rgba(255, 255, 255, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 245, 245, 0.719);
+        }
+
+        .btn button:hover {
+            background-color: rgb(11, 11, 11);
+            color: white;
+        }
+
+        @media (width<550px) {
+
+            .main {
+                width: 95%;
+                height: 90 vh;
+                margin: 10%;
+                padding: 20px;
+                border-radius: 0px 0px 0px 0px;
+            }
+
+            .btn button {
+
+                width: 50px;
+                height: 45px;
+                gap: 30px;
+                border-radius: 25px;
+                border: none;
+                font-weight: bold;
+                font-size: 20px;
+                box-shadow: 0px 4px 0px 2px solid grey;
+                cursor: pointer;
+
+            }
+        }
+
+        @media (550px<=width <=1131px) {
+
+            .main {
+                width: 40%;
+                height: 80vh;
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .btn button {
+
+                width: 40px;
+                height: 40px;
+                gap: 20px;
+                border-radius: 25px;
+                border: none;
+                font-weight: bold;
+                font-size: 20px;
+                box-shadow: 0px 4px 0px 2px solid grey;
+                cursor: pointer;
+
+            }
+
+        }
+
+        ;
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="main">
+            <div class="input">
+
+                <input type="text" placeholder="0" id="myans">
+            </div>
+
+            <div class="box">
+
+                <div class="btn">
+                    <button onclick="document.getElementById('myans').value=''">AC</button>
+                    <button onclick="Delete();">DE</button>
+                    <button
+                        onclick="document.getElementById('myans').value=eval(document.getElementById('myans').value)"
+                        id="equal">=</button>
+                    <button onclick="Percentage();">%</button>
+                </div>
+
+                <div class="btn">
+                    <button id="one" value="1"
+                        onclick="document.getElementById('myans').value+=document.getElementById('one').value">1</button>
+                    <button id="two" value="2"
+                        onclick="document.getElementById('myans').value+=document.getElementById('two').value">2</button>
+                    <button id="three" value="3"
+                        onclick="document.getElementById('myans').value+=document.getElementById('three').value">3</button>
+                    <button id="plus" value="+"
+                        onclick="document.getElementById('myans').value+=document.getElementById('plus').value">+</button>
+                </div>
+
+                <div class="btn">
+                    <button id="four" value="4"
+                        onclick="document.getElementById('myans').value+=document.getElementById('four').value">4</button>
+                    <button id="five" value="5"
+                        onclick="document.getElementById('myans').value+=document.getElementById('five').value">5</button>
+                    <button id="six" value="6"
+                        onclick="document.getElementById('myans').value+=document.getElementById('six').value">6</button>
+                    <button id="minus" value="-"
+                        onclick="document.getElementById('myans').value+=document.getElementById('minus').value">-</button>
+                </div>
+                <div class="btn">
+                    <button id="seven" value="7"
+                        onclick="document.getElementById('myans').value+=document.getElementById('seven').value">7</button>
+                    <button id="eight" value="8"
+                        onclick="document.getElementById('myans').value+=document.getElementById('eight').value">8</button>
+                    <button id="nine" value="9"
+                        onclick="document.getElementById('myans').value+=document.getElementById('nine').value">9</button>
+                    <button id="multiplay" value="*"
+                        onclick="document.getElementById('myans').value+=document.getElementById('multiplay').value">*</button>
+                </div>
+
+                <div class="btn">
+                    <button id="zero" value="0"
+                        onclick="document.getElementById('myans').value+=document.getElementById('zero').value">0</button>
+                    <button id="double_zero" value="00"
+                        onclick="document.getElementById('myans').value+=document.getElementById('double_zero').value">00</button>
+                    <button id="dot" value="."
+                        onclick="document.getElementById('myans').value+=document.getElementById('dot').value"><b>.</b></button>
+                    <button id="divide" value="/"
+                        onclick="document.getElementById('myans').value+=document.getElementById('divide').value">/</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function Delete() {
+
+            var exp = document.getElementById('myans').value;
+            document.getElementById('myans').value = exp.substring(0, exp.length - 1);
+        }
+
+        function Percentage() {
+            var per = document.getElementById('myans').value;
+            if (!isNaN(per))
+                document.getElementById('myans').value = per / 100;
+        }
+
+
+    </script>
+</body>
+
+</html>

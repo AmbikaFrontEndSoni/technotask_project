@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">LogIn Form</div>
+        <form name="f1" onsubmit="return validation();" >
+            <div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter your Email" name="email" id="email" required>
+                <span id="ferror1" style="color:red"></span>
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter your Password" name="pwd" id="pass"required><br>
+                <span id="ferror2"  style="color:red"></span>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" id="checkbox">Remember me</label>
+                <span id="ferror3" style="color:red"></span>
+               
+            </div>
+            <input type="submit" value="Submit" id="btn">
+            <div class="signup">
+                <span>Don't have an account<a href="RegistrationForm.html">Register </a></span>
+            </div>
+        </form>
+    </div>
+<script src="login.js"></script>
+</body>
+</html>
+
